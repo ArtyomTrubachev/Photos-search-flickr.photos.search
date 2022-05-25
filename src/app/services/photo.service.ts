@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Photo} from "../models/photo";
+import {ResponsePhotos} from "../models/photo";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,20 @@ export class PhotoService {
 
   constructor(private http: HttpClient) { }
 
-  public getPhoto(): Observable<Photo> {
-    const url = 'https://www.flickr.com/services/rest/?method=flickr.photos.search&';
-    const params = `api_key=${environment.flickr.key}&text=${keyword}&format=json&nojsoncallback=1&per_page=12`;
-
-    return this.http.get<Photo>(`https://www.flickr.com/services/rest/?method=flickr.test.echo&name=value`);
+  public getPhoto(searchTag): Observable<ResponsePhotos> {
+    return this.http.get<ResponsePhotos>(`${environment.urlFlickr}`, {
+      params: {
+        method: 'flickr.photos.search',
+        api_key: `${environment.apiKeyFlickr}`,
+        tags: searchTag,
+        format: 'json',
+        nojsoncallback: '1',
+        tag_mode: 'all',
+        media: 'photos',
+        per_page: '15',
+        page: 1,
+        extras: 'tags,date_taken,owner_name,url_q,url_m',
+      }
+    })
   }
 }

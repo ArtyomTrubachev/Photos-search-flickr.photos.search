@@ -3,7 +3,7 @@
     <mat-tab-group dynamicHeight>
       <mat-tab label="Short tab">
         <div class="example-small-box mat-elevation-z4">
-          <app-gallery (search)="showPerson($event)"></app-gallery>
+          <app-gallery (search)="showPhotos($event)" [SearchResPhotos]="arrayPhotos"></app-gallery>
         </div>
       </mat-tab>
       <mat-tab label="Long tab">

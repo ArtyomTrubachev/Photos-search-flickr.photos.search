@@ -9,10 +9,10 @@ import {stringify} from "@angular/compiler/src/util";
 })
 export class GalleryComponent implements OnInit {
   public searchSubject: Subject<string> = new Subject();
-  public dataStudents: any;
+  public arrSearchResPhotos: any;
 
-  @Input() set arrStudents(students) {
-    this.dataStudents = students;
+  @Input() set SearchResPhotos(arrayPhotos) {
+    this.arrSearchResPhotos = arrayPhotos;
   };
   @Output() search = new EventEmitter<string>();
 

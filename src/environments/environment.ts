@@ -5,9 +5,8 @@
 export const environment = {
   production: false,
   apiKey: 'AIzaSyBk24XZyodItB0V3Bve4wpYWlXruMcfcFo',
-  flickr: {
-    key: '7b05fcfae444c5acefb0e37c593160de'
-  }
+  urlFlickr: 'https://www.flickr.com/services/rest/',
+  apiKeyFlickr: '7b05fcfae444c5acefb0e37c593160de',
 };
 
 /*
