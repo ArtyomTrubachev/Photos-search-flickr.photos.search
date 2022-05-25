@@ -1,0 +1,21 @@
+<div class="main-container">
+  <header class="header">
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="Short tab">
+        <div class="example-small-box mat-elevation-z4">
+          <app-gallery (search)="showPerson($event)"></app-gallery>
+        </div>
+      </mat-tab>
+      <mat-tab label="Long tab">
+        <div class="example-large-box mat-elevation-z4">
+          <app-selected-images>Selected</app-selected-images>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </header>
+
+</div>
+
+
+<!--
+<app-gallery (search)="showPerson($event)" [arrStudents]="arrayStudents"></app-gallery>-->

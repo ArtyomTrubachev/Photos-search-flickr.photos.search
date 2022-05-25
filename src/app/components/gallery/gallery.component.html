@@ -1,0 +1,8 @@
+<div class="container">
+  <input type="text" (input)="onSearch($event)">
+  <div class="container-mages" *ngFor="let item of dataStudents">
+    <p>{{item.name}}</p>
+    <p>{{item.secondName}}</p>
+    <p>{{item.age}}</p>
+  </div>
+</div>

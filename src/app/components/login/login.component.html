@@ -1,0 +1,22 @@
+<div class="main-container">
+  <mat-card class="container">
+    <mat-card class="container__title">
+      <div class="title">Sign In</div>
+    </mat-card>
+
+    <form appFormClick (clickForm) = clearErrorMessage() class="example-form" [formGroup]="userForm">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input class="form__input" formControlName="email" matInput placeholder="Email" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input class="form__input" formControlName="password" matInput placeholder="Password" type="password" value="">
+      </mat-form-field>
+
+      <div *ngIf="errorMessage" class="divError">{{errorMessage}}</div>
+      <button class="btnForm" (click)="signIn()" mat-button color="primary" [disabled]="userForm.invalid">Sign In</button>
+    </form>
+  </mat-card>
+</div>

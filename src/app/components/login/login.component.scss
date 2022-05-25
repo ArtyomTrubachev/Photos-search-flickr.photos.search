@@ -1,0 +1,66 @@
+.main-container {
+  box-sizing: border-box;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  min-height: 500px;
+  width: 100%;
+  padding: 0;
+}
+
+.title {
+  font-family: 'Russo One', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  color: white;
+}
+
+.container__title {
+  background-color: #57b846;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.example-form {
+  padding: 50px 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__input {
+  font-family: 'Russo One', sans-serif;
+  font-weight: 200;
+  font-size: 15px;
+}
+
+.divError {
+  font-family: 'Russo One', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: rgba(221,11,9,0.44);
+  text-align: center;
+}
+
+.btnForm {
+  margin-top: 60px;
+  color: white;
+  background-color: #57b846;
+  transition: all .4s;
+}
+
+.btnForm:hover {
+  background-color: #408534;
+}
+
+.btnForm.mat-button-disabled {
+  color: white;
+}
+
