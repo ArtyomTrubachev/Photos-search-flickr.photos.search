@@ -1,7 +1,38 @@
-.container {
-  margin-top: 100px;
+input {
+  display:block;
+  width: 100%;
+  margin:10px 0;
+  padding:10px;
 }
 
-.container-images {
-  margin-top: 50px;
+.inputPhoto {
+  margin-top: 25px;
+  border-radius:10px;
+  border: 1px solid #757373;
+  transition: .4s;
+  background: #eae8e8;
 }
+
+.inputPhoto:hover {
+  border: 1px solid #038181;
+}
+
+.wrapper {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+
+.main_card-img {
+  object-fit: cover;
+  width: 100%;
+  height: 240px;
+  transition: .4s;
+}
+
+.main_card-img:hover {
+  filter: brightness(0.6);
+}
+

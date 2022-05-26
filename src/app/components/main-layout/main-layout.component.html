@@ -1,21 +1,35 @@
 <div class="main-container">
   <header class="header">
-    <mat-tab-group dynamicHeight>
-      <mat-tab label="Short tab">
-        <div class="example-small-box mat-elevation-z4">
-          <app-gallery (search)="showPhotos($event)" [SearchResPhotos]="arrayPhotos"></app-gallery>
-        </div>
+    <div class="header__another"></div>
+    <div class="header__title">Photos-search-flickr.photos.search</div>
+    <div class="header__logo-user">
+      <svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>ic_profile</title>
+        <desc>Created with Sketch.</desc>
+        <defs></defs>
+        <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+          <g id="24-px-Icons" transform="translate(-122.000000, -27.000000)" stroke="#000000">
+            <g id="ic_profile" transform="translate(120.000000, 24.000000)">
+              <g id="profile">
+                <g transform="translate(3.000000, 4.000000)" stroke-width="2">
+                  <circle id="Oval-6" cx="9" cy="4" r="4"></circle>
+                  <path d="M18,17 C18,12.0294373 13.9705627,8 9,8 C4.02943725,8 0,12.0294373 0,17 L18,17 Z" id="Oval"></path>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </header>
+  <div class="divPhoto">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Gallery">
+        <app-gallery (search)="showPhotos($event)" [SearchResPhotos]="arrayPhotos"></app-gallery>
       </mat-tab>
-      <mat-tab label="Long tab">
-        <div class="example-large-box mat-elevation-z4">
-          <app-selected-images>Selected</app-selected-images>
-        </div>
+      <mat-tab label="Favourite photos">
+        <app-selected-images>Selected</app-selected-images>
       </mat-tab>
     </mat-tab-group>
-  </header>
-
+  </div>
 </div>
-
-
-<!--
-<app-gallery (search)="showPerson($event)" [arrStudents]="arrayStudents"></app-gallery>-->

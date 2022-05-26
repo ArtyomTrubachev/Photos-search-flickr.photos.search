@@ -15,6 +15,8 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
 import { SelectedImagesComponent } from './components/selected-images/selected-images.component';
 import {MatTabsModule} from "@angular/material/tabs";
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { SelectedPhotoComponent } from './components/gallery/selected-photo/selected-photo.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -23,20 +25,22 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     FormClickDirective,
     MainLayoutComponent,
     SelectedImagesComponent,
-    GalleryComponent
+    GalleryComponent,
+    SelectedPhotoComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-    HttpClientModule,
-    MatTabsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatCardModule,
+        HttpClientModule,
+        MatTabsModule,
+        MatDialogModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

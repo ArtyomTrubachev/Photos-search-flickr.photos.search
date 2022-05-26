@@ -1,5 +1,29 @@
 .main-container {
-  padding-top: 100px;
+  max-width: 1900px;
   margin: 0 auto;
-  width: 1300px;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "photo";
+  grid-template-rows: 100px 1fr;
+  height: 100vh;
 }
+
+.header {
+  align-self: center;
+  align-items: center;
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+}
+
+.header__title {
+  text-align: center;
+}
+
+.header__logo-user {
+  display: flex;
+  justify-content: center;
+}
+
+

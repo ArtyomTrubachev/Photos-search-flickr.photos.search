@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {debounceTime, Subject} from "rxjs";
-import {stringify} from "@angular/compiler/src/util";
+import {MatDialog} from "@angular/material/dialog";
+import {SelectedPhotoComponent} from "./selected-photo/selected-photo.component";
 
 @Component({
   selector: 'app-gallery',
@@ -16,7 +17,7 @@ export class GalleryComponent implements OnInit {
   };
   @Output() search = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.searchSubject.pipe(debounceTime(700)).subscribe((text) => {
@@ -26,5 +27,17 @@ export class GalleryComponent implements OnInit {
 
   public onSearch(event): void {
     this.searchSubject.next(event.target.value);
+  }
+
+  public showPopUpPhoto(item): void {
+    console.log(item);
+    const dialogRef = this.dialog.open(SelectedPhotoComponent, {
+      width: '950px',
+      height: '750px',
+      data: item
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 }

@@ -14,4 +14,5 @@ export interface Photo {
   owner: string;
   secret: string;
   tags: string;
+  url_m: string;
 }

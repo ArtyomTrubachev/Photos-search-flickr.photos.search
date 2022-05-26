@@ -14,7 +14,7 @@ export class AuthService {
 
   public login(user: IUser): Observable<TokenFireBase> {
     user.returnSecureToken = true;
-    return this.http.post<TokenFireBase>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, user)
+    return this.http.post<TokenFireBase>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKeyFB}`, user)
       .pipe(
         map( response => response),
         tap(this.setToken),

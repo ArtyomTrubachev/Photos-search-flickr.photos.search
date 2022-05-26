@@ -21,10 +21,14 @@ export class PhotoService {
         nojsoncallback: '1',
         tag_mode: 'all',
         media: 'photos',
-        per_page: '15',
+        per_page: '8',
         page: 1,
-        extras: 'tags,date_taken,owner_name,url_q,url_m',
+        extras: 'tags,date_taken,owner_name,url_m',
       }
     })
+  }
+
+  public postFavPhotoToFB(infPhoto): Observable<void> {
+    return this.http.post<void>(`https://angular-search-gallery-c02a8-default-rtdb.firebaseio.com/${infPhoto.idPhoto}.json`, `${JSON.stringify(infPhoto)}`);
   }
 }
