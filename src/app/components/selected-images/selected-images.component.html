@@ -1,0 +1,6 @@
+<div class="wrapper">
+  <div class="container-images" *ngFor="let item of arrFavouritePhotos">
+    <img  class="main_card-img" src="{{item['urlPhoto']}}">
+    <button mat-flat-button color="primary">Delete from favourite</button>
+  </div>
+</div>

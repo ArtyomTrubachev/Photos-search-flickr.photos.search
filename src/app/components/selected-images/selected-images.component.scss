@@ -1,0 +1,23 @@
+.inputPhoto:hover {
+  border: 1px solid #038181;
+}
+
+.wrapper {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+
+.main_card-img {
+  object-fit: cover;
+  width: 100%;
+  height: 240px;
+  transition: .4s;
+}
+
+.main_card-img:hover {
+  filter: brightness(0.6);
+}
+

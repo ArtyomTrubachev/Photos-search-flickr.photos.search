@@ -29,6 +29,10 @@ export class PhotoService {
   }
 
   public postFavPhotoToFB(infPhoto): Observable<void> {
-    return this.http.post<void>(`https://angular-search-gallery-c02a8-default-rtdb.firebaseio.com/${infPhoto.idPhoto}.json`, `${JSON.stringify(infPhoto)}`);
+    return this.http.post<void>(`https://angular-search-gallery-c02a8-default-rtdb.firebaseio.com/.json`, `${JSON.stringify(infPhoto)}`);
+  }
+
+  public getFavouritePhoto(): Observable<any> {
+    return this.http.get<any>(`https://angular-search-gallery-c02a8-default-rtdb.firebaseio.com/.json`);
   }
 }

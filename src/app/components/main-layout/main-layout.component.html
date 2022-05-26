@@ -23,12 +23,12 @@
     </div>
   </header>
   <div class="divPhoto">
-    <mat-tab-group mat-align-tabs="center">
+    <mat-tab-group #tabRef (selectedTabChange)="check(tabRef.selectedIndex)" mat-align-tabs="center">
       <mat-tab label="Gallery">
         <app-gallery (search)="showPhotos($event)" [SearchResPhotos]="arrayPhotos"></app-gallery>
       </mat-tab>
       <mat-tab label="Favourite photos">
-        <app-selected-images>Selected</app-selected-images>
+        <app-selected-images [FavouritePhotos]="arrayFavouritePhotos"></app-selected-images>
       </mat-tab>
     </mat-tab-group>
   </div>

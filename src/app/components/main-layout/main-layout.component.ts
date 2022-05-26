@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Observable, Subscription} from "rxjs";
+import {elementAt, Observable, Subscription} from "rxjs";
 import {ResponsePhotos} from "../../models/photo";
 import {PhotoService} from "../../services/photo.service";
 
@@ -13,33 +13,13 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   public errorMessage: string ='';
   public arrayPhotos: Array<any> = [];
+  public arrayFavouritePhotos: Array<any> = [];
 
   constructor(private photoService: PhotoService) {
     this.subscription = new Subscription();
   }
 
   ngOnInit(): void {
-  }
-
-  public showPerson(event): void {
-/*    console.log(event);
-    this.arrayStudents = [
-      {
-        name: 'Artyom',
-        secondName: 'Trubachyov',
-        age: '28'
-      },
-      {
-        name: 'Dmitry',
-        secondName: 'Romanov',
-        age: '33'
-      },
-      {
-        name: 'Oleg',
-        secondName: 'Starostin',
-        age: '22'
-      }
-    ];*/
   }
 
   public showPhotos(tag): void {
@@ -54,6 +34,25 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
       complete: () => {
       }
     })
+  }
+
+  public showFavouritePhotos(): void {
+    this.subscription = this.photoService.getFavouritePhoto().subscribe({
+      next: (data) => {
+        this.arrayFavouritePhotos = Object.values(data);
+        console.log(this.arrayFavouritePhotos)
+      },
+      error: (error) => {
+        this.errorMessage = error.error.message;
+      },
+      complete: () => {
+      }
+    })
+  }
+
+  public check(index) {
+    if (index)
+      this.showFavouritePhotos();
   }
 
   ngOnDestroy() {

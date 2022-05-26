@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-selected-images',
@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./selected-images.component.scss']
 })
 export class SelectedImagesComponent implements OnInit {
+  public arrFavouritePhotos: any;
+
+  @Input() set FavouritePhotos(arrayFavouritePhotos) {
+    this.arrFavouritePhotos = arrayFavouritePhotos;
+  }
 
   constructor() { }
 
