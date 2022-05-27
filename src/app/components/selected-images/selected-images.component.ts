@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-selected-images',
@@ -10,11 +10,15 @@ export class SelectedImagesComponent implements OnInit {
 
   @Input() set FavouritePhotos(arrayFavouritePhotos) {
     this.arrFavouritePhotos = arrayFavouritePhotos;
-  }
+  };
+  @Output() removePhoto = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  public onRemove(event): void {
+    this.removePhoto.emit(event);
+  }
 }

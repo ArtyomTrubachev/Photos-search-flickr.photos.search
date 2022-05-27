@@ -35,4 +35,8 @@ export class PhotoService {
   public getFavouritePhoto(): Observable<any> {
     return this.http.get<any>(`https://angular-search-gallery-c02a8-default-rtdb.firebaseio.com/.json`);
   }
+
+  public removeFavouritePhoto(id: string): Observable<void> {
+    return this.http.delete<void>(`https://angular-search-gallery-c02a8-default-rtdb.firebaseio.com/${id}.json`);
+  }
 }

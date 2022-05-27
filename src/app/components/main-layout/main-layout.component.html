@@ -28,7 +28,7 @@
         <app-gallery (search)="showPhotos($event)" [SearchResPhotos]="arrayPhotos"></app-gallery>
       </mat-tab>
       <mat-tab label="Favourite photos">
-        <app-selected-images [FavouritePhotos]="arrayFavouritePhotos"></app-selected-images>
+        <app-selected-images (removePhoto)="removeFavouritePhoto($event)" [FavouritePhotos]="arrayFavouritePhotos"></app-selected-images>
       </mat-tab>
     </mat-tab-group>
   </div>

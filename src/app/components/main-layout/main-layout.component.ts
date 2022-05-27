@@ -23,7 +23,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
   }
 
   public showPhotos(tag): void {
-    this.subscription = this.photoService.getPhoto(tag).subscribe({
+    this.subscription.add(this.photoService.getPhoto(tag).subscribe({
       next: (data) => {
         console.log(data.photos.photo);
         this.arrayPhotos = data.photos.photo;
@@ -33,26 +33,40 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
       },
       complete: () => {
       }
-    })
+    }));
   }
 
   public showFavouritePhotos(): void {
-    this.subscription = this.photoService.getFavouritePhoto().subscribe({
+    this.subscription.add(this.photoService.getFavouritePhoto().subscribe({
       next: (data) => {
-        this.arrayFavouritePhotos = Object.values(data);
-        console.log(this.arrayFavouritePhotos)
+        this.arrayFavouritePhotos = Object.entries(data);
       },
       error: (error) => {
         this.errorMessage = error.error.message;
       },
       complete: () => {
       }
-    })
+    }));
   }
 
   public check(index) {
     if (index)
       this.showFavouritePhotos();
+  }
+
+  public removeFavouritePhoto(event) {
+    this.subscription.add(this.photoService.removeFavouritePhoto(event.target.id).subscribe({
+      next: (data) => {
+
+        console.log('Фото удалено');
+      },
+      error: (error) => {
+        this.errorMessage = error.error.message;
+      },
+      complete: () => {
+        this.showFavouritePhotos();
+      }
+    }));
   }
 
   ngOnDestroy() {

@@ -1,6 +1,10 @@
-<div class="wrapper">
+<div *ngIf="arrFavouritePhotos.length>=1" class="wrapper">
   <div class="container-images" *ngFor="let item of arrFavouritePhotos">
-    <img  class="main_card-img" src="{{item['urlPhoto']}}">
-    <button mat-flat-button color="primary">Delete from favourite</button>
+    <img class="main_card-img" src="{{item['1']['urlPhoto']}}">
+    <button id="{{item['0']}}" (click)="onRemove($event)">Delete from favourite</button>
   </div>
+</div>
+
+<div *ngIf="arrFavouritePhotos.length<1" class="wrapper">
+  <p class="footTitle">Sorry you don't have any favourite photo</p>
 </div>
