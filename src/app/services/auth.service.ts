@@ -23,12 +23,11 @@ export class AuthService {
 
   public setToken(response: TokenFireBase) {
     console.log(response);
-/*    if (response) {
-      localStorage.setItem('token', response.token);
-
+    if (response) {
+      localStorage.setItem('token', response.idToken);
     } else {
       localStorage.clear();
-    }*/
+    }
   }
 
 }

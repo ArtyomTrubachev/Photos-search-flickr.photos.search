@@ -10,11 +10,12 @@ input {
   border-radius:10px;
   border: 1px solid #757373;
   transition: .4s;
-  background: #eae8e8;
+  background: #f6f3e1;
+  outline:none;
 }
 
 .inputPhoto:hover {
-  border: 1px solid #038181;
+  background: #f5f3f3;
 }
 
 .wrapper {

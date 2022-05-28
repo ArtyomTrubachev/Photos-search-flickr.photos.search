@@ -28,3 +28,18 @@
   display: flex;
   justify-content: center;
 }
+
+#Icons {
+  transition: 1s;
+}
+
+#Icons:hover {
+  fill: black;
+}
+
+@media (max-width: 1400px) {
+  .header__title {
+    font-size: 50px;
+
+  }
+}

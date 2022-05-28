@@ -18,11 +18,15 @@
   transition: .4s;
 }
 
-.main_card-img:hover {
-/*  filter: brightness(0.6);*/
-}
-
 button {
   margin-top: 5px;
   width: 100%;
+}
+
+.containerTitleNoPhoto {
+  margin-top: 100px;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 35px;
+  color: #605e5e;
 }
