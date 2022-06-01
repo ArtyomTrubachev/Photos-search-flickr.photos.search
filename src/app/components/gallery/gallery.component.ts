@@ -11,6 +11,7 @@ import {SelectedPhotoComponent} from "./selected-photo/selected-photo.component"
 export class GalleryComponent implements OnInit {
   public searchSubject: Subject<string> = new Subject();
   public arrSearchResPhotos: any;
+  public p: number = 1;
 
   @Input() set SearchResPhotos(arrayPhotos) {
     this.arrSearchResPhotos = arrayPhotos;

@@ -24,7 +24,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
   //60 = 1 minute
-      this.subscription.add(this.bnIdle.startWatching(60).subscribe((res) => {
+      this.subscription.add(this.bnIdle.startWatching(1000).subscribe((res) => {
         if (res && localStorage.getItem('token')) {
           this.authService.logOut();
           this.router.navigateByUrl('login');
@@ -47,6 +47,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
       }))
       .subscribe({
       next: (data) => {
+        console.log(data);
         this.arrayPhotos = data;
       },
       error: (error) => {

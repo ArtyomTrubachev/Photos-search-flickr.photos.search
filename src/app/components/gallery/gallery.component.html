@@ -1,7 +1,11 @@
 <input class="inputPhoto" type="text" (input)="onSearch($event)" placeholder="Enter photo name">
 
 <div class="wrapper">
-  <div class="container-images" *ngFor="let item of arrSearchResPhotos">
+  <div class="container-images" *ngFor="let item of arrSearchResPhotos | paginate: { itemsPerPage: 8, currentPage: p }">
       <img (click)="showPopUpPhoto(item)" class="main_card-img" src="{{item.url}}" title="{{item.title}}">
   </div>
+</div>
+
+<div class="divPag">
+  <pagination-controls  class="pagination" (pageChange)="p = $event"></pagination-controls>
 </div>

@@ -25,7 +25,7 @@ export class PhotoService {
         nojsoncallback: '1',
         tag_mode: 'all',
         media: 'photos',
-        per_page: '8',
+ /*       per_page: '8',*/
         page: 1,
         extras: 'tags,date_taken,owner_name,url_m',
       }

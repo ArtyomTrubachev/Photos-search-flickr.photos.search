@@ -18,6 +18,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { SelectedPhotoComponent } from './components/gallery/selected-photo/selected-photo.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { TrenComponent } from './components/tren/tren.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { TrenComponent } from './components/tren/tren.component';
         HttpClientModule,
         MatTabsModule,
         MatDialogModule,
+        NgxPaginationModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
