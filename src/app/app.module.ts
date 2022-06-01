@@ -17,6 +17,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { SelectedPhotoComponent } from './components/gallery/selected-photo/selected-photo.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { TrenComponent } from './components/tren/tren.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     MainLayoutComponent,
     SelectedImagesComponent,
     GalleryComponent,
-    SelectedPhotoComponent
+    SelectedPhotoComponent,
+    TrenComponent
   ],
     imports: [
         BrowserModule,

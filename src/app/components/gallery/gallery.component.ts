@@ -30,10 +30,9 @@ export class GalleryComponent implements OnInit {
   }
 
   public showPopUpPhoto(item): void {
-    console.log(item);
     const dialogRef = this.dialog.open(SelectedPhotoComponent, {
-      width: '950px',
-      height: '750px',
+      width: '850px',
+      height: '670px',
       data: item
     });
 

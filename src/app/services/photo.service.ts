@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {ResponsePhotos} from "../models/photo";
+import {map, Observable} from "rxjs";
+import {
+  FBRespAfterFuncAddPhoto,
+  FBRespAfterFuncShowFavPhotos,
+  ResponsePhotos,
+} from "../models/photo";
 import {environment} from "../../environments/environment";
 
 @Injectable({
@@ -11,7 +15,7 @@ export class PhotoService {
 
   constructor(private http: HttpClient) { }
 
-  public getPhoto(searchTag): Observable<ResponsePhotos> {
+  public getPhoto(searchTag): Observable<any> {
     return this.http.get<ResponsePhotos>(`${environment.urlFlickr}`, {
       params: {
         method: 'flickr.photos.search',
@@ -28,12 +32,12 @@ export class PhotoService {
     })
   }
 
-  public postFavPhotoToFB(infPhoto): Observable<void> {
-    return this.http.post<void>(`https://angular-search-gallery-c02a8-default-rtdb.firebaseio.com/.json`, `${JSON.stringify(infPhoto)}`);
+  public postFavPhotoToFB(infPhoto): Observable<FBRespAfterFuncAddPhoto> {
+    return this.http.post<FBRespAfterFuncAddPhoto>(`https://angular-search-gallery-c02a8-default-rtdb.firebaseio.com/.json`, `${JSON.stringify(infPhoto)}`);
   }
 
-  public getFavouritePhoto(): Observable<any> {
-    return this.http.get<any>(`https://angular-search-gallery-c02a8-default-rtdb.firebaseio.com/.json`);
+  public getFavouritePhoto(): Observable<FBRespAfterFuncShowFavPhotos> {
+    return this.http.get<FBRespAfterFuncShowFavPhotos>(`https://angular-search-gallery-c02a8-default-rtdb.firebaseio.com/.json`);
   }
 
   public removeFavouritePhoto(id: string): Observable<void> {

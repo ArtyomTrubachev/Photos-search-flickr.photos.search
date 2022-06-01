@@ -1,12 +1,12 @@
 input {
   display:block;
-  width: 100%;
+  width: 80%;
   margin:10px 0;
   padding:10px;
 }
 
 .inputPhoto {
-  margin-top: 25px;
+  margin: 25px auto;
   border-radius:10px;
   border: 1px solid #757373;
   transition: .4s;
@@ -19,10 +19,11 @@ input {
 }
 
 .wrapper {
-  margin-top: 25px;
+  width: 80%;
+  margin: 25px auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+/*  grid-template-rows: repeat(2, 1fr);*/
   grid-gap: 15px;
 }
 

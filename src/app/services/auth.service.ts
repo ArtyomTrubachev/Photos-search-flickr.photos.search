@@ -21,6 +21,10 @@ export class AuthService {
       )
   }
 
+  public logOut(): void {
+    localStorage.clear();
+  }
+
   public setToken(response: TokenFireBase) {
     console.log(response);
     if (response) {

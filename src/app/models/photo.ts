@@ -13,6 +13,16 @@ export interface Photo {
   id: string;
   owner: string;
   secret: string;
+  server: string;
   tags: string;
   url_m: string;
+}
+
+export interface FBRespAfterFuncAddPhoto {
+  name: string;
+}
+
+export interface FBRespAfterFuncShowFavPhotos{
+  urlPhoto: string;
+  titlePhoto: string;
 }

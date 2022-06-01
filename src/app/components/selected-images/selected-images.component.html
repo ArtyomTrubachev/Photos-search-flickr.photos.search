@@ -1,10 +1,19 @@
-<div *ngIf="arrFavouritePhotos.length>=1" class="wrapper">
-  <div class="container-images" *ngFor="let item of arrFavouritePhotos">
-    <img class="main_card-img" src="{{item['1']['urlPhoto']}}">
-    <button id="{{item['0']}}" (click)="onRemove($event)">Delete from favourite</button>
-  </div>
-</div>
+<ng-container *ngIf="arrFavouritePhotos.length; then notEmpty; else empty"></ng-container>
 
-<div *ngIf="arrFavouritePhotos.length<1" class="containerTitleNoPhoto">
-  <p class="titleNoPhotos">Sorry, you don't have any favourite photo</p>
-</div>
+<ng-template #notEmpty>
+  <div class="wrapper">
+    <div class="container-images" *ngFor="let item of arrFavouritePhotos">
+      <img class="main_card-img" src="{{item.urlPhoto}}">
+<!--      <img class="main_card-img" src="{{item['1']['urlPhoto']}}">-->
+      <button id="{{item.id}}" (click)="onRemove($event)">Delete from favourite</button>
+<!--      <button id="{{item['0']}}" (click)="onRemove($event)">Delete from favourite</button>-->
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #empty>
+  <div class="containerTitleNoPhoto">
+    <p class="titleNoPhotos">Sorry, you don't have any favourite photo</p>
+  </div>
+</ng-template>
+

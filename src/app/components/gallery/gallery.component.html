@@ -2,6 +2,6 @@
 
 <div class="wrapper">
   <div class="container-images" *ngFor="let item of arrSearchResPhotos">
-      <img (click)="showPopUpPhoto(item)" class="main_card-img" src="{{item.url_m}}">
+      <img (click)="showPopUpPhoto(item)" class="main_card-img" src="{{item.url}}" title="{{item.title}}">
   </div>
 </div>

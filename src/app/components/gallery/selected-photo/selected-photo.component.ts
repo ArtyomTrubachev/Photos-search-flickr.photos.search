@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {Subscription} from "rxjs";
+import {map, Subscription} from "rxjs";
 import {PhotoService} from "../../../services/photo.service";
 
 @Component({
@@ -26,13 +26,15 @@ export class SelectedPhotoComponent implements OnInit {
 
   public addToFavourite(selectedPhoto): void {
     let shortDataSelectedPhoto = {
-      idPhoto: selectedPhoto.id,
-      urlPhoto: selectedPhoto.url_m,
-      titlePhoto: selectedPhoto.title
+      urlPhoto: selectedPhoto.url,
+      titlePhoto: selectedPhoto.title,
     }
-    this.subscription = this.photoService.postFavPhotoToFB(shortDataSelectedPhoto).subscribe({
+    this.subscription = this.photoService.postFavPhotoToFB(shortDataSelectedPhoto)
+      .subscribe({
       next: (data) => {
-        alert('Фото успешно добавлено');
+        alert('Your photo has been added to favorites');
+
+        this.closeModal();
       },
       error: (error) => {
         this.errorMessage = error.error.message;
