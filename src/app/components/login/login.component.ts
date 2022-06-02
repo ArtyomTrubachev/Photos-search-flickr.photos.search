@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       next: (data) => {
       },
       error: (error) => {
-        this.errorMessage = error.error.message;
+        this.errorMessage = error.message;
       },
       complete: () => {
         localStorage.setItem('email', this.userForm.value.email);

@@ -6,6 +6,15 @@
   </div>
 </div>
 
-<div class="divPag">
-  <pagination-controls  class="pagination" (pageChange)="p = $event"></pagination-controls>
-</div>
+<ng-container *ngIf="arrSearchResPhotos.length; then notEmpty; else empty"></ng-container>
+
+<ng-template #notEmpty>
+  <div class="divPag">
+    <pagination-controls  class="pagination" (pageChange)="p = $event"></pagination-controls>
+  </div>
+</ng-template>
+
+<ng-template #empty></ng-template>
+
+
+
